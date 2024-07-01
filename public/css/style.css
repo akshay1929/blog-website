@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+--black: #1c1c1c;
+--gray: #7e7e7e;
+--gray-light: #e4e4e4;
+--red: #b30000;
+--font-size-base: 1rem;
+--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+--font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+--border-radius: 10px;
+}
+
+body {
+font-family: 'Montserrat', sans-serif;
+color: var(--black);
+font-size: var(--font-size-base);
+background-color: #acacac;
+margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+font-family: 'Montserrat', sans-serif;
+font-size: var(--font-size-base);;
+display: block;
+box-sizing: border-box;
+width: 100%;
+padding: 0.7rem 0.75rem;
+margin-bottom: 1rem;
+}
+
+.btn {
+background-color: var(--black);
+border: none;
+color: white; 
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px; 
+cursor: pointer;
+}
+
+.btn-addNew {
+    background-color: var(--black);
+    border: none;
+    color: white; 
+    padding: 8px 8px;
+    text-decoration: none;
+    margin: 4px 2px; 
+    cursor: pointer;
+}
+  
+.btn-delete {
+padding: 10px 16px;
+background-color: var(--red);
+}
+
+img {
+width: 100%;
+height: auto;
+}
+
+/* Layout */
+.container {
+max-width: 982px;
+margin: 0 auto;
+padding: 0 10px;
+}
+
+.main {
+padding: 20px 0;
+}
+
+/* Hero Section */
+.hero-image {
+max-height: 528px;
+filter: drop-shadow(0px 44px 34px rgba(0, 0, 0, 0.25));
+overflow: hidden;
+border-radius: var(--border-radius);
+}
+
+
+/* Main Header */
+.header {
+display: grid;
+align-items: center;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+grid-template-areas: 
+"logo button"
+"menu menu";
+padding-top: 10px;
+background-color: #1c1c1c;
+margin: 0 auto;
+padding: 0 10px;
+color: var(--gray-light);
+position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: 
+        "logo menu button";
+    }
+    
+}
+.header_text {
+    text-decoration: none;
+    color: var(--gray-light);
+}
+
+.header_logo {
+font-weight: 800;
+font-size: 25px;
+text-decoration: none;
+
+}
+
+.header_logo:hover {
+text-decoration: underline;
+}
+
+.header_nav {
+justify-content: center;
+align-items: center;
+display: flex;
+grid-area: menu;
+}
+
+.header_logo, .header__nav, .header__button {
+width: 100%;
+}
+
+.header_button {
+display: flex;
+justify-content: end;
+
+}
+
+.header-item-logo {
+    max-width: 200px;
+    grid-area: logo;
+}
+
+.header-item-button {
+    grid-area: button;
+    display: flex;
+    justify-content: end;
+}
+
+.header_button button {
+display: flex;
+gap: 0.3rem;
+align-items: center;
+border: 0;
+padding: 6px 12px;
+background: none;
+border-radius: 10px;
+border: 2px solid transparent;
+font-size: 1rem;
+font-weight: 600;
+color: var(--gray-light);
+}
+
+.header_button button:hover {
+border: 2px solid var(--black);
+}
+
+/* Header -> Navigation */
+.header_nav ul {
+list-style-type: none;
+display: flex;
+gap: 1rem;
+font-weight: 600;
+padding: 0;
+}
+
+.header_nav ul a {
+padding: 10px;
+text-decoration: none;
+}
+
+.header_nav ul a.active {
+color: #7E7E7E;
+}
+
+.header_nav ul a:hover {
+text-decoration: underline;
+}
+
+/* Author - HomePage */
+.author {
+padding: 10px 0;
+text-align: center;
+}
+
+.author_heading {
+margin-top: 10px;
+margin-bottom: 5px;
+}
+
+.author_body {
+font-size: var(--font-size-md);
+margin: 5px 0 40px 0;
+}
+
+
+/* Home Article List */
+.articles_title {
+margin-top: 4rem;
+font-weight: 400;
+}
+.body_text {
+    text-decoration: none;
+    color: var(--black);
+}
+.article-ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+display: flex;
+flex-direction: column;
+}
+
+.article-list-date {
+font-size: 1rem;
+color: var(--gray);
+width: 100px;
+display: inline-block;
+width: 260px;
+text-align: right;
+}
+
+.article-ul li a {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+text-decoration: none;
+margin: 18px 0;
+}
+
+@media only screen and (min-width: 768px) {
+.article-ul li a {
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-list__date {
+    text-align: right;
+}
+}
+
+.article-ul li {
+font-size: 24px;
+cursor: pointer;
+transition: filter 0.1s;
+}
+
+.article-ul li:not(:last-child) {
+border-bottom: 1px solid var(--gray-light);
+}
+
+.article-ul li:hover {
+filter: none;
+}
+
+.article-ul:hover li {
+    filter: none;
+}
+
+.article-ul:hover li:hover {
+
+    filter: saturate(5)
+}
+
+
+.article {
+white-space: pre-wrap;
+}
+
+
+/* Footer */
+.footer {
+margin: 4rem;
+text-align: center;
+}
+
+
+/* Dashboard Admin */
+.admin-title {
+display: flex;
+justify-content: space-between;
+align-items: center;
+text-decoration: none;
+color: var(--black);
+}
+
+.admin-posts {
+padding: 0;
+margin: 0;
+}
+
+.admin-posts-title {
+    text-decoration: none;
+    color: var(--black);
+    }
+
+.admin-post-controls form {
+display: inline-block;
+}
+
+.admin-post-controls .btn  {
+display: inline-block;
+background-color: var(--black);
+color: var(--gray-light);
+border: 0;
+text-decoration: none;
+font-size: .8rem;
+padding: 4px 8px;
+line-height: 2;
+}
+
+.admin-posts li {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+}
+
+/* SeachBar */
+.searchBtn{
+    cursor: pointer;
+}
+.searchBar {
+visibility: hidden;
+transform: translateY(-50px);
+background-color: var(--black);
+padding: 4px 0;
+position: absolute;
+left: 0;
+right: 0;
+top: 0; 
+z-index: 10; 
+transition: transform 0.1s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+
+.searchBar.open {
+transform: translateY(0);
+}
+
+.searchBar input {
+margin: 0;
+border: 0;
+}
+
+#searchClose {
+position: absolute;
+top: 0;
+right: 0;
+color: var(--gray-light);
+padding: 15px;
+}
+
+
+.pagination {
+font-size: 1.3rem;
+color: var(--gray);
+text-decoration: none;
+margin-top: 40px;
+display: inline-block;
+}
+
+.pagination:hover {
+color: var(--black);
+}

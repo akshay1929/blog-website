@@ -1,0 +1,17 @@
+<div class="author>
+    <h1 class="author_heading">Search Results</h1>
+</div>
+
+<section class="articles">
+    <ul class="article-ul">
+        
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span> <%= post.title %></span>
+                <span class="article-list-date"><%= post.createdAt.toLocaleDateString('en-US')%></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+</section>
